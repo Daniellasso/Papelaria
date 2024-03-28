@@ -1,12 +1,11 @@
-import { StyleSheet, StatusBar, View } from 'react-native';
-import Home from './src/pages/Home/Home';
-
+import { StyleSheet, StatusBar, View } from "react-native";
+import Routes from "./src/routes";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Home/>
-      <StatusBar style={{backgroundColor: '#000'}} />
+      <Routes />
+      <StatusBar style={{ backgroundColor: "#000" }} />
     </View>
   );
 }
@@ -14,8 +13,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#C3BEFA',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    backgroundColor: "#C3BEFA",
+    alignItems: "center",
+    justifyContent: "center"
+  }
 });
