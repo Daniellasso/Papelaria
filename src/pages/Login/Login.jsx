@@ -23,11 +23,16 @@ export default function Login() {
             secureTextEntry={true}
           />
           <TouchableOpacity onPress={() => navigation.navigate("Cadastro")}>
-            <Text style={{ marginTop: -15, marginBottom: 10, color: "#fff" }}>
-              Criar Conta
+            <Text
+              style={{ marginTop: -15, marginBottom: 10, color: "#c6c6c6" }}
+            >
+              Não possui uma conta? Cadastre-se
             </Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.botao}>
+          <TouchableOpacity
+            style={styles.botao}
+            onPress={() => navigation.navigate("Home")}
+          >
             <Text style={styles.botaoText}>Login</Text>
           </TouchableOpacity>
         </View>

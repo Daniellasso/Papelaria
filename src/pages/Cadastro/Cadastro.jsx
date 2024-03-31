@@ -1,5 +1,6 @@
 import {
   Image,
+  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -13,25 +14,32 @@ export default function Login() {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <Image style={styles.img} source={require("../../assets/caderno.png")} />
-      <View style={styles.card}>
-        <View style={{ marginTop: 30 }}>
-          <TextInput placeholder="Nome" style={styles.input} />
-          <TextInput
-            placeholder="Senha"
-            style={styles.input}
-            // secureTextEntry={true}
-          />
-          <TouchableOpacity onPress={() => navigation.navigate("Login")}>
-            <Text style={{ marginTop: -15, marginBottom: 10, color: "#fff" }}>
-              Login
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.botao}>
-            <Text style={styles.botaoText}>Login</Text>
-          </TouchableOpacity>
+      <ScrollView>
+        <Image
+          style={styles.img}
+          source={require("../../assets/caderno.png")}
+        />
+        <View style={styles.card}>
+          <View style={{ marginTop: 30, height: "100%" }}>
+            <TextInput placeholder="Nome" style={styles.input} />
+            <TextInput placeholder="E-mail" style={styles.input} />
+            <TextInput placeholder="Senha" style={styles.input} />
+            <TextInput placeholder="(18) 99999-9999" style={styles.input} />
+            <TextInput placeholder="CPF" style={styles.input} />
+            <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+              <Text style={{ marginTop: -15, marginBottom: 10, color: "#fff" }}>
+                Faça o login
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.botao}
+              onPress={() => navigation.navigate("Home")}
+            >
+              <Text style={styles.botaoText}>Cadastra-se</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
+      </ScrollView>
     </View>
   );
 }
@@ -45,7 +53,8 @@ const styles = StyleSheet.create({
   img: {
     height: 250,
     resizeMode: "contain",
-    marginTop: 50
+    marginTop: 50,
+    marginLeft: -50
   },
   card: {
     backgroundColor: "#7534FA",
@@ -53,7 +62,7 @@ const styles = StyleSheet.create({
     margin: 20,
     width: 350,
     borderRadius: 20,
-    height: 300
+    height: 500
   },
   input: {
     backgroundColor: "#F1E9E9",
