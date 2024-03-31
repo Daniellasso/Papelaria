@@ -39,7 +39,8 @@ export default function Login() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center"
+    alignItems: "center",
+    backgroundColor: "#C3BEFA"
   },
   img: {
     height: 250,

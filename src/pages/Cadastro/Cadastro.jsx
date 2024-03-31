@@ -20,7 +20,7 @@ export default function Login() {
           <TextInput
             placeholder="Senha"
             style={styles.input}
-            secureTextEntry={true}
+            // secureTextEntry={true}
           />
           <TouchableOpacity onPress={() => navigation.navigate("Login")}>
             <Text style={{ marginTop: -15, marginBottom: 10, color: "#fff" }}>
@@ -39,7 +39,8 @@ export default function Login() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center"
+    alignItems: "center",
+    backgroundColor: "#C3BEFA"
   },
   img: {
     height: 250,

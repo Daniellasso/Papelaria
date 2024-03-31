@@ -1,21 +1,46 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createDrawerNavigator } from "@react-navigation/drawer";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import { StyleSheet } from "react-native";
+// Import das páginas
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
+import Cadastro from "./pages/Cadastro/Cadastro";
 
-export default function routes() {
-  const Drawer = createDrawerNavigator();
+// Criação do Stack Navigator
+const Stack = createNativeStackNavigator();
+
+// Componente de rotas
+export default function Routes() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator>
-        <Drawer.Screen name="Home" component={Home} />
-        <Drawer.Screen name="Login" component={Login} />
-      </Drawer.Navigator>
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: "#099cfe"
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold"
+          }
+        }}
+      >
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{ title: "Login", headerShown: false }}
+        />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Cadastro"
+          component={Cadastro}
+          options={{ title: "Cadastro", headerShown: false }}
+        />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({});
