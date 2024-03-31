@@ -8,7 +8,6 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar backgroundColor="#027cfe" barStyle="light-content" />
       <Routes />
-      {/* <RoutesTabs /> */}
     </View>
   );
 }

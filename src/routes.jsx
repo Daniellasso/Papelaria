@@ -1,17 +1,14 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-// Import das páginas
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Cadastro from "./pages/Cadastro/Cadastro";
+import RoutesTabs from "./routesTabs";
 
-// Criação do Stack Navigator
 const Stack = createNativeStackNavigator();
 
-// Componente de rotas
 export default function Routes() {
   return (
     <NavigationContainer>
@@ -33,7 +30,7 @@ export default function Routes() {
         />
         <Stack.Screen
           name="Home"
-          component={Home}
+          component={RoutesTabs}
           options={{ headerShown: false }}
         />
         <Stack.Screen
