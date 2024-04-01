@@ -20,7 +20,7 @@ export default function AppTabs() {
       }}
     >
       <Tab.Screen
-        name="Home"
+        name="Inicio"
         component={Home}
         options={{
           tabBarIcon: ({ color, size }) => (

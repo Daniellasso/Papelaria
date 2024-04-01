@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Image,
   StyleSheet,
@@ -6,15 +7,19 @@ import {
   TouchableOpacity,
   View
 } from "react-native";
-import React from "react";
+import * as Animatable from "react-native-animatable";
 import { useNavigation } from "@react-navigation/native";
 
 export default function Login() {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <Image style={styles.img} source={require("../../assets/caderno.png")} />
-      <View style={styles.card}>
+      <Animatable.Image
+        style={styles.img}
+        source={require("../../assets/caderno.png")}
+        animation={"flipInY"}
+      />
+      <Animatable.View style={styles.card} animation="fadeInUp" delay={500}>
         <View style={{ marginTop: 30 }}>
           <TextInput placeholder="Nome" style={styles.input} />
           <TextInput
@@ -36,7 +41,7 @@ export default function Login() {
             <Text style={styles.botaoText}>Login</Text>
           </TouchableOpacity>
         </View>
-      </View>
+      </Animatable.View>
     </View>
   );
 }

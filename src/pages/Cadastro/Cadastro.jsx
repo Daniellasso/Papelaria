@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Image,
   ScrollView,
@@ -7,7 +8,7 @@ import {
   TouchableOpacity,
   View
 } from "react-native";
-import React from "react";
+import * as Animatable from "react-native-animatable";
 import { useNavigation } from "@react-navigation/native";
 
 export default function Login() {
@@ -15,11 +16,12 @@ export default function Login() {
   return (
     <View style={styles.container}>
       <ScrollView>
-        <Image
+        <Animatable.Image
+          animation={"flipInY"}
           style={styles.img}
           source={require("../../assets/caderno.png")}
         />
-        <View style={styles.card}>
+        <Animatable.View style={styles.card} animation="fadeInUp" delay={500}>
           <View style={{ marginTop: 30, height: "100%" }}>
             <TextInput placeholder="Nome" style={styles.input} />
             <TextInput placeholder="E-mail" style={styles.input} />
@@ -35,10 +37,10 @@ export default function Login() {
               style={styles.botao}
               onPress={() => navigation.navigate("Home")}
             >
-              <Text style={styles.botaoText}>Cadastra-se</Text>
+              <Text style={styles.botaoText}>Cadastre-se</Text>
             </TouchableOpacity>
           </View>
-        </View>
+        </Animatable.View>
       </ScrollView>
     </View>
   );
