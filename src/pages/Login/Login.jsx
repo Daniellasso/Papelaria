@@ -29,7 +29,7 @@ export default function Login() {
           />
           <TouchableOpacity onPress={() => navigation.navigate("Cadastro")}>
             <Text
-              style={{ marginTop: -15, marginBottom: 10, color: "#c6c6c6" }}
+              style={{ marginTop: -15, marginBottom: 10, color: "#ffffff" }}
             >
               Não possui uma conta? Cadastre-se
             </Text>
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    backgroundColor: "#C3BEFA"
+    backgroundColor: "#f6daff"
   },
   img: {
     height: 250,
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     marginTop: 50
   },
   card: {
-    backgroundColor: "#7534FA",
+    backgroundColor: "#c4a6fe",
     padding: 20,
     margin: 20,
     width: 350,
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     marginTop: -5
   },
   botao: {
-    backgroundColor: "#5287FA",
+    backgroundColor: "#f2c6ffd3",
     padding: 20,
     borderRadius: 20,
     width: "100%"

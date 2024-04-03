@@ -59,6 +59,6 @@ export default function Carrinho() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#C3BEFA"
+    backgroundColor: "#f6daff"
   }
 });

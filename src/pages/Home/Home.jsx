@@ -46,7 +46,7 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#C3BEFA"
+    backgroundColor: "#f6daff"
   },
   img: {
     width: "100%",

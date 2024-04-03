@@ -6,7 +6,7 @@ import RoutesTabs from "./src/routesTabs";
 export default function App() {
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor="#027cfe" barStyle="light-content" />
+      <StatusBar backgroundColor="#8309fe" barStyle="light-content" />
       <Routes />
     </View>
   );
