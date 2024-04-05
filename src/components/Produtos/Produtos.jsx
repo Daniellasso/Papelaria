@@ -23,6 +23,7 @@ export default function Produtos() {
           >
             <Text style={{ fontSize: 20 }}>NomeProduto</Text>
             <Text style={{ fontSize: 16 }}>Descrição...</Text>
+            <Text style={{ fontSize: 16 }}>R$ 00.00</Text>
           </View>
         </View>
       </TouchableOpacity>
