@@ -23,20 +23,7 @@ export default function Home() {
             <CardCategori />
             <CardCategori />
           </ScrollView>
-          <View style={{ flexDirection: "row", width: 900 }}>
-            <Produtos />
-            <Produtos />
-          </View>
-
-          <View style={{ flexDirection: "row", width: 900 }}>
-            <Produtos />
-            <Produtos />
-          </View>
-
-          <View style={{ flexDirection: "row", width: 900 }}>
-            <Produtos />
-            <Produtos />
-          </View>
+          <Produtos />
         </View>
       </ScrollView>
     </View>
