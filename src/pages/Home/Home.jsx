@@ -14,15 +14,7 @@ export default function Home() {
               source={require("../../assets/BANNER_PAPELARIA.png")}
             />
           </View>
-          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-            <CardCategori />
-            <CardCategori />
-            <CardCategori />
-            <CardCategori />
-            <CardCategori />
-            <CardCategori />
-            <CardCategori />
-          </ScrollView>
+          <CardCategori />
           <Produtos />
         </View>
       </ScrollView>

@@ -196,18 +196,20 @@ export default function Produtos() {
           <View style={styles.itemContainer}>
             <Image style={styles.img} source={item.imagem} />
             <View style={styles.info}>
-              <Text style={styles.title}>{item.modelo}</Text>
-              <Text style={styles.description}>{item.descricao}</Text>
-              <View
-                style={{
-                  flexDirection: "row",
-                  alignItems: "center"
-                }}
-              >
-                <Text style={styles.price}>{item.preco}</Text>
-                <TouchableOpacity>
-                  <FontAwesome name="shopping-cart" size={30} color="black" />
-                </TouchableOpacity>
+              <View style={{ height: "100%" }}>
+                <Text style={styles.title}>{item.modelo}</Text>
+                <Text style={styles.description}>{item.descricao}</Text>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    alignItems: "center"
+                  }}
+                >
+                  <Text style={styles.price}>{item.preco}</Text>
+                  <TouchableOpacity>
+                    <FontAwesome name="shopping-cart" size={30} color="black" />
+                  </TouchableOpacity>
+                </View>
               </View>
             </View>
           </View>
@@ -236,11 +238,12 @@ const styles = StyleSheet.create({
     height: 190
   },
   title: {
-    fontSize: 20,
-    textAlign: "left"
+    fontSize: 18,
+    textAlign: "left",
+    fontWeight: "500"
   },
   description: {
-    fontSize: 16
+    fontSize: 14
   },
   price: {
     fontSize: 16,
