@@ -1,3 +1,4 @@
+
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import CardCategori from "../../components/CardCategori/CardCategori";
@@ -6,7 +7,6 @@ import Produtos from "../../components/Produtos/Produtos";
 export default function Home() {
   return (
     <View style={styles.container}>
-      <ScrollView>
         <View>
           <View>
             <Image
@@ -15,9 +15,10 @@ export default function Home() {
             />
           </View>
           <CardCategori />
+      <ScrollView>
           <Produtos />
-        </View>
       </ScrollView>
+        </View>
     </View>
   );
 }
