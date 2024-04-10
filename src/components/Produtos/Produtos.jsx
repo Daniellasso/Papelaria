@@ -52,16 +52,16 @@ const produtos = [
   {
     id: 6,
     modelo: "Notebook",
-    preco: "R$ 1.399,99",
+    preco: "R$ 5.399,99",
     descricao: "O notebook mais completo para estudos ou trabalho.",
-    imagem: require("../../imgs_prods/noteboock.jpg")
+    imagem: require("../../imgs_prods/notebook.jpg")
   },
   {
     id: 7,
     modelo: "Caixa de Lápis Coloridos",
     preco: "R$ 39,99",
     descricao: `Essa caixa contém uma variedade de cores de lápis colorido, com cerca de 20 unidades.`,
-    imagem: require("../../imgs_prods/lapisDeCor.jpg")
+    imagem: require("../../imgs_prods/lapisPintar.jpg")
   },
   {
     id: 8,
@@ -90,7 +90,7 @@ const produtos = [
     modelo: "Post-it",
     preco: "R$ 5,99",
     descricao: `Os melhores post-its do mercado, em qualidade superior.`,
-    imagem: require("../../imgs_prods/posIt.jpg")
+    imagem: require("../../imgs_prods/postit.jpg")
   },
   {
     id: 12,
@@ -104,7 +104,7 @@ const produtos = [
     modelo: "Kit Canetas Coloridas",
     preco: "R$ 29,99",
     descricao: `As canetas coloridas com as mais diversas cores. Compre agora e deixe suas anotações com muito mais destaque e beleza !`,
-    imagem: require("../../imgs_prods/canetasColoridas.jpg")
+    imagem: require("../../imgs_prods/canetaBic.jpg")
   },
   {
     id: 14,
@@ -160,7 +160,7 @@ const produtos = [
     modelo: "Cartucho para Impressora",
     preco: "R$ 150,00",
     descricao: `Kit Cartucho de Tinta HP 667 Preto + 667 Colorido para HP Deskjet Ink Advantage 2776 2774 2376 6476 Original`,
-    imagem: require("../../imgs_prods/cartucho.jpg")
+    imagem: require("../../imgs_prods/ngcDeImpressora.jpg")
   },
   {
     id: 22,
@@ -174,14 +174,14 @@ const produtos = [
     modelo: "Clips de Papel",
     preco: "R$11,53",
     descricao: `Clipes de papel padrão, cinza, 100/pacote, pequeno 1`,
-    imagem: require("../../imgs_prods/clips.jpg")
+    imagem: require("../../imgs_prods/clipes.jpg")
   },
   {
     id: 24,
     modelo: "Grampo Grampeador 26/6",
     preco: "R$15,90",
     descricao: `Grampo Grampeador 26/6 Galvanizado C/5000 Unidade Escritório`,
-    imagem: require("../../imgs_prods/grampo.jpg")
+    imagem: require("../../imgs_prods/grampeador.jpg")
   }
 ];
 
@@ -207,7 +207,7 @@ export default function Produtos() {
                 >
                   <Text style={styles.price}>{item.preco}</Text>
                   <TouchableOpacity>
-                    <FontAwesome name="shopping-cart" size={30} color="black" />
+                    <FontAwesome name="shopping-cart" size={30} color="black" style={{left: -40}} />
                   </TouchableOpacity>
                 </View>
               </View>
@@ -223,30 +223,95 @@ const styles = StyleSheet.create({
   img: {
     width: 170,
     height: 220,
-    resizeMode: "cover"
+    resizeMode: "contain",
+    borderRadius: 10,
+    margin: 5,
+    marginLeft: 10,
+    marginRight: 10,
+    marginTop: 10,
+    marginBottom: 10,
+    shadowColor: "#000",
+
   },
   itemContainer: {
     flex: 1,
     flexDirection: "column",
-    margin: 5
+    margin: 5,
+    justifyContent: "center",
+    alignItems: "center",
+    position: "relative",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    elevation: 10,
+    position: "relative",
+    justifyContent: "center",
+    alignItems: "center",
+
   },
   info: {
-    backgroundColor: "#cfcfcfe9",
+    backgroundColor: "#e2dfdfeb",
     padding: 5,
     alignItems: "center",
     width: 170,
-    height: 190
+    height: 190,
+    borderRadius: 10,
+    bottom: 0,
+    margin: 5,
+    position: "relative",
   },
   title: {
     fontSize: 18,
     textAlign: "left",
-    fontWeight: "500"
+    fontWeight: "500",
+    color: "black",
+    marginTop: 5,
+    marginBottom: 5,
+    marginLeft: 5,
+    marginRight: 5,
+    width: 160,
+    height: 50,
+    left: 20
+
   },
   description: {
-    fontSize: 14
+    fontSize: 14,
+    textAlign: "left",
+    fontWeight: "400",
+    color: "gray",
+    marginTop: -15,
+    marginBottom: 5,
+    marginLeft: 5,
+    marginRight: 5,
+    width: 160,
+    height: 50,
+    position: "relative",
+    bottom: 0,
+    left: 20,
+    elevation: 10,
+    justifyContent: "center",
+    alignItems: "center",
+
   },
   price: {
     fontSize: 16,
-    paddingRight: 60
+    paddingRight: 60,
+    textAlign: "left",
+    fontWeight: "500",
+    color: "black",
+    marginTop: 15,
+    marginBottom: 5,
+    marginLeft: 5,
+    marginRight: 5,
+    position: "relative",
+    bottom: 0,
+    left: 20,
+    width: 160,
+    height: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    elevation: 10, 
+
   }
 });

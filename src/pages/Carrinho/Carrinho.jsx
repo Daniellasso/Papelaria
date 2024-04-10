@@ -43,7 +43,7 @@ export default function Carrinho() {
               style={{
                 fontSize: 18,
                 fontWeight: "900",
-                color: "#ff0000",
+                color: "#CE93CB",
                 marginLeft: 10
               }}
             >
@@ -59,6 +59,6 @@ export default function Carrinho() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f6daff"
+    backgroundColor: "#fff6ec"
   }
 });

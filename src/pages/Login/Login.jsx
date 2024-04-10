@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    backgroundColor: "#f6daff"
+    backgroundColor: "#F7F2EC"
   },
   img: {
     height: 250,
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     marginTop: 50
   },
   card: {
-    backgroundColor: "#c4a6fe",
+    backgroundColor: "#47CACC",
     padding: 20,
     margin: 20,
     width: 350,
@@ -73,12 +73,12 @@ const styles = StyleSheet.create({
     width: "100%",
     padding: 10,
     borderRadius: 10,
-    shadowColor: "#bd09fe",
+    shadowColor: "#000000",
     elevation: 10,
     marginTop: -5
   },
   botao: {
-    backgroundColor: "#f2c6ffd3",
+    backgroundColor: "#CE93CB",
     padding: 20,
     borderRadius: 20,
     width: "100%"
