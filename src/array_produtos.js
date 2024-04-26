@@ -36,8 +36,8 @@
     },
     {
         id: 6,
-        modelo: 'Notebook',
-        preco: 'R$ 1.399,99',
+        modelo: 'Macbook Air',
+        preco: 'R$ 5.399,99',
         descricao: "O notebook mais completo para estudos ou trabalho.",
         imagem: '/img/notebook.jpg'
     },

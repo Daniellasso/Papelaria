@@ -11,7 +11,7 @@ export default function Home() {
           <View>
             <Image
               style={styles.img}
-              source={require("../../assets/BANNER_PAPELARIA.png")}
+              source={require("../../assets/BannerPapelaria2.jpg")}
             />
           </View>
           <CardCategori />
@@ -25,7 +25,7 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f6daff"
+    backgroundColor: "#ffffff"
   },
   img: {
     width: "100%",
