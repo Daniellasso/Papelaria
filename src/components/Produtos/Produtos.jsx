@@ -9,7 +9,7 @@ import {
   View
 } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
-
+import { useNavigation } from "@react-navigation/native";
 const produtos = [
   {
     id: 1,
@@ -186,8 +186,16 @@ const produtos = [
 ];
 
 export default function Produtos() {
+  const navigation = useNavigation();
+  const [carrinho, setCarrinho] = useState([]);
+
+  const adicionarAoCarrinho = (produto) => {
+    setCarrinho((carrinhoAtual) => [...carrinhoAtual, produto]);
+    navigation.navigate("Carrinho", { carrinho: [...carrinho, produto] });
+  };
+
   return (
-    <View style={{ flex: 1, marginVertical: 10 }}>
+    <View style={{ marginVertical: 10, marginBottom: "80%" }}>
       <FlatList
         data={produtos}
         numColumns={2}
@@ -196,20 +204,23 @@ export default function Produtos() {
           <View style={styles.itemContainer}>
             <Image style={styles.img} source={item.imagem} />
             <View style={styles.info}>
-              <View style={{ height: "100%" }}>
-                <Text style={styles.title}>{item.modelo}</Text>
-                <Text style={styles.description}>{item.descricao}</Text>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    alignItems: "center"
-                  }}
-                >
-                  <Text style={styles.price}>{item.preco}</Text>
-                  <TouchableOpacity>
-                    <FontAwesome name="shopping-cart" size={30} color="black" style={{left: -40}} />
-                  </TouchableOpacity>
-                </View>
+              <Text style={styles.title}>{item.modelo}</Text>
+              <Text style={styles.description}>{item.descricao}</Text>
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center"
+                }}
+              >
+                <Text style={styles.price}>{item.preco}</Text>
+                <TouchableOpacity onPress={() => adicionarAoCarrinho(item)}>
+                  <FontAwesome
+                    name="shopping-cart"
+                    size={30}
+                    color="black"
+                    style={{ marginLeft: -50, marginTop: -35 }}
+                  />
+                </TouchableOpacity>
               </View>
             </View>
           </View>
@@ -230,8 +241,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
     marginTop: 10,
     marginBottom: 10,
-    shadowColor: "#000",
-
+    shadowColor: "#000"
   },
   itemContainer: {
     flex: 1,
@@ -240,15 +250,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     position: "relative",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
     elevation: 10,
     position: "relative",
     justifyContent: "center",
-    alignItems: "center",
-
+    alignItems: "center"
   },
   info: {
     backgroundColor: "#e2dfdfeb",
@@ -257,9 +262,8 @@ const styles = StyleSheet.create({
     width: 170,
     height: 190,
     borderRadius: 10,
-    bottom: 0,
     margin: 5,
-    position: "relative",
+    position: "relative"
   },
   title: {
     fontSize: 18,
@@ -273,10 +277,9 @@ const styles = StyleSheet.create({
     width: 160,
     height: 50,
     left: 20
-
   },
   description: {
-    fontSize: 14,
+    fontSize: 15,
     textAlign: "left",
     fontWeight: "400",
     color: "gray",
@@ -284,34 +287,24 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     marginLeft: 5,
     marginRight: 5,
-    width: 160,
-    height: 50,
-    position: "relative",
-    bottom: 0,
-    left: 20,
-    elevation: 10,
-    justifyContent: "center",
-    alignItems: "center",
-
+    width: 130,
+    height: 100,
+    paddingTop: 10
   },
   price: {
     fontSize: 16,
-    paddingRight: 60,
     textAlign: "left",
     fontWeight: "500",
     color: "black",
-    marginTop: 15,
     marginBottom: 5,
     marginLeft: 5,
     marginRight: 5,
     position: "relative",
-    bottom: 0,
     left: 20,
     width: 160,
     height: 50,
     justifyContent: "center",
     alignItems: "center",
-    elevation: 10, 
-
+    elevation: 10
   }
 });
