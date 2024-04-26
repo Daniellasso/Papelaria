@@ -14,13 +14,13 @@ export default function Carrinho() {
       <ScrollView>
         <View style={{ width: "100%" }}>
           <ProductCart />
+          {/* <ProductCart />
           <ProductCart />
           <ProductCart />
-          <ProductCart />
-          <ProductCart />
+          <ProductCart /> */}
         </View>
       </ScrollView>
-      <View
+      {/* <View
         style={{
           backgroundColor: "#ffffffba",
           height: 70
@@ -51,7 +51,7 @@ export default function Carrinho() {
             </Text>
           </TouchableOpacity>
         </View>
-      </View>
+      </View> */}
     </View>
   );
 }

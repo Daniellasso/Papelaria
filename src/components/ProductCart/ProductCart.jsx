@@ -15,6 +15,7 @@ export default function ProductCart() {
   const animacao = useRef(null);
   const renderizar = useRef(true);
   const [numero, setNumero] = useState(1);
+  const [valor, setValor] = useState(0);
 
   useEffect(() => {
     if (renderizar.current) {
@@ -111,6 +112,38 @@ export default function ProductCart() {
               />
             </TouchableOpacity>
           </View>
+        </View>
+      </View>
+      <View
+        style={{
+          backgroundColor: "#ffffffba",
+          height: 70
+        }}
+      >
+        <View
+          style={{
+            flexDirection: "row",
+            marginLeft: 10,
+            alignItems: "center",
+            marginVertical: 10
+          }}
+        >
+          <Text style={{ fontSize: 30, fontWeight: "900" }}>Total:</Text>
+          <Text style={{ fontSize: 25, marginLeft: 10, fontWeight: "500" }}>
+            R$ {valor}
+          </Text>
+          <TouchableOpacity>
+            <Text
+              style={{
+                fontSize: 18,
+                fontWeight: "900",
+                color: "#ff0000",
+                marginLeft: 10
+              }}
+            >
+              LIMPAR CARRINHO
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
