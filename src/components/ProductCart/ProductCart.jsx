@@ -9,33 +9,8 @@ import {
 } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
-<<<<<<< HEAD
-// Adicione props como argumento aqui
-export default function ProductCart({ nome, preco }) {
-  const [save, setSave] = useState(false);
-  const animacao = useRef(null);
-  const renderizar = useRef(true);
-  const [numero, setNumero] = useState(1);
-
-  useEffect(() => {
-    if (renderizar.current) {
-      if (save) {
-        animacao.current.play(60, 60);
-      } else {
-        animacao.current.play(0, 0);
-      }
-
-      renderizar.current = false;
-    } else if (save) {
-      animacao.current.play(0, 60);
-    } else {
-      animacao.current.play(60, 0);
-    }
-  }, [save]);
-=======
 export default function ProductCart() {
   const [numero, setNumero] = useState(0);
->>>>>>> 853d076f9608654c6b6709ad32040a990c138559
 
   function adicionar() {
     setNumero(numero + 1);
@@ -71,7 +46,6 @@ export default function ProductCart() {
             paddingBottom: 10
           }}
         >
-          {/* Utilize a prop 'nome' para definir o nome do produto */}
           <Text style={{ fontSize: 20, marginLeft: 10 }}>{nome}</Text>
           <View style={{ flexDirection: "row", marginTop: 10, marginLeft: 10 }}>
             <TouchableOpacity onPress={subtrair}>
@@ -101,8 +75,6 @@ export default function ProductCart() {
               paddingTop: 50
             }}
           >
-<<<<<<< HEAD
-            {/* Utilize a prop 'preco' para definir o preço do produto */}
             <Text style={{ fontSize: 16, marginHorizontal: 10 }}>R$ {preco.toFixed(2)}</Text>
             <TouchableOpacity
               onPress={() => {
@@ -116,14 +88,14 @@ export default function ProductCart() {
                 style={{ height: 50, width: 50 }}
                 ref={animacao}
               />
-=======
+              </TouchableOpacity>
             <Text style={{ fontSize: 16, marginHorizontal: 10 }}>R$ 12.00</Text>
             <TouchableOpacity>
               <AntDesign name="plussquare" size={35} color="black" />
->>>>>>> 853d076f9608654c6b6709ad32040a990c138559
             </TouchableOpacity>
           </View>
         </View>
+        
       </View>
       {/* <View
         style={{

@@ -1,55 +1,16 @@
 import React, { useState } from "react";
 import {
+  FlatList,
+  Image,
   ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View
 } from "react-native";
-<<<<<<< HEAD
-import ProductCart from "../../components/ProductCart/ProductCart";
-
-export default function Carrinho() {
-  // Estado inicial para produtos no carrinho
-  const [produtos, setProdutos] = useState([
-    { id: 1, nome: "Produto 1", preco: 10.00 },
-    { id: 2, nome: "Produto 2", preco: 12.00 },
-    { id: 3, nome: "Produto 3", preco: 15.00 },
-    { id: 4, nome: "Produto 4", preco: 8.00 },
-    { id: 5, nome: "Produto 5", preco: 9.00 }
-  ]);
-
-  // Função para calcular o total
-  const calcularTotal = () => {
-    return produtos.reduce((total, produto) => total + produto.preco, 0).toFixed(2);
-  };
-
-  // Função para remover todos os produtos
-  const limparCarrinho = () => {
-    setProdutos([]);
-  };
-
-  return (
-    <View style={styles.container}>
-      <ScrollView>
-        <View style={{ width: "100%" }}>
-          {produtos.map((produto) => (
-            <ProductCart key={produto.id} nome={produto.nome} preco={produto.preco} />
-          ))}
-        </View>
-      </ScrollView>
-      <View style={styles.bottomBar}>
-        <View style={styles.totalContainer}>
-          <Text style={styles.totalText}>Total:</Text>
-          <Text style={styles.totalAmount}>R$ {calcularTotal()}</Text>
-          <TouchableOpacity onPress={limparCarrinho}>
-            <Text style={styles.limparCarrinhoText}>LIMPAR CARRINHO</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-=======
 import { FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+
 const produtos = [
   {
     id: 1,
@@ -249,7 +210,8 @@ export default function Produtos() {
               <View
                 style={{
                   flexDirection: "row",
-                  alignItems: "center"
+                  alignItems: "center",
+                  marginTop: '40%'
                 }}
               >
                 <Text style={styles.price}>{item.preco}</Text>
@@ -258,7 +220,7 @@ export default function Produtos() {
                     name="shopping-cart"
                     size={30}
                     color="black"
-                    style={{ marginLeft: -50, marginTop: -35 }}
+                    style={{ marginLeft: 50,  alignItems: 'center' }}
                   />
                 </TouchableOpacity>
               </View>
@@ -266,13 +228,11 @@ export default function Produtos() {
           </View>
         )}
       />
->>>>>>> 853d076f9608654c6b6709ad32040a990c138559
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-<<<<<<< HEAD
   container: {
     flex: 1,
     backgroundColor: "#fff6ec"
@@ -280,7 +240,7 @@ const styles = StyleSheet.create({
   bottomBar: {
     backgroundColor: "#ffffffba",
     height: 70
-=======
+  },
   img: {
     width: 170,
     height: 220,
@@ -314,7 +274,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     margin: 5,
     position: "relative"
->>>>>>> 853d076f9608654c6b6709ad32040a990c138559
   },
   totalContainer: {
     flexDirection: "row",
@@ -333,50 +292,8 @@ const styles = StyleSheet.create({
   },
   limparCarrinhoText: {
     fontSize: 18,
-<<<<<<< HEAD
     fontWeight: "900",
     color: "#CE93CB",
     marginLeft: 10
-=======
-    textAlign: "left",
-    fontWeight: "500",
-    color: "black",
-    marginTop: 5,
-    marginBottom: 5,
-    marginLeft: 5,
-    marginRight: 5,
-    width: 160,
-    height: 50,
-    left: 20
-  },
-  description: {
-    fontSize: 15,
-    textAlign: "left",
-    fontWeight: "400",
-    color: "gray",
-    marginTop: -15,
-    marginBottom: 5,
-    marginLeft: 5,
-    marginRight: 5,
-    width: 130,
-    height: 100,
-    paddingTop: 10
-  },
-  price: {
-    fontSize: 16,
-    textAlign: "left",
-    fontWeight: "500",
-    color: "black",
-    marginBottom: 5,
-    marginLeft: 5,
-    marginRight: 5,
-    position: "relative",
-    left: 20,
-    width: 160,
-    height: 50,
-    justifyContent: "center",
-    alignItems: "center",
-    elevation: 10
->>>>>>> 853d076f9608654c6b6709ad32040a990c138559
   }
 });

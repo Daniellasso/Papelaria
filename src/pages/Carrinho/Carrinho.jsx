@@ -1,22 +1,14 @@
 import React, { useState } from "react";
 import {
-<<<<<<< HEAD
   FlatList,
   Image,
   ScrollView,
-=======
->>>>>>> 853d076f9608654c6b6709ad32040a990c138559
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
-  Image,
   TextInput,
-  FlatList
 } from "react-native";
-<<<<<<< HEAD
-import React, { useState } from "react";
-import ProductCart from "../../components/ProductCart/ProductCart";
 
 
 const produtos = [
@@ -194,39 +186,7 @@ const produtos = [
   }
 ];
 
-export default function Carrinho() {
-   const [carrinho, setCarrinho] = useState([]);
 
-   const adicionarAoCarrinho = (produto) => {
-     setCarrinho((carrinhoAtual) => [...carrinhoAtual, produto]);
-   };
-  return (
-    <View style={{ flex: 1, marginVertical: 10 }}>
-    <FlatList
-      data={produtos}
-      numColumns={2}
-      keyExtractor={(item) => item.id.toString()}
-      renderItem={({ item }) => (
-        <View style={styles.itemContainer}>
-          <Image style={styles.img} source={item.imagem} />
-          <View style={styles.info}>
-            <View style={{ height: "100%" }}>
-              <Text style={styles.title}>{item.modelo}</Text>
-              <Text style={styles.description}>{item.descricao}</Text>
-              <View style={{ flexDirection: "row", alignItems: "center" }}>
-                <Text style={styles.price}>{item.preco}</Text>
-                <TouchableOpacity onPress={() => adicionarAoCarrinho(item)}>
-                  <FontAwesome name="shopping-cart" size={30} color="black" style={{ marginLeft: 10 }} />
-                </TouchableOpacity>
-              </View>
-            </View>
-          </View>
-        </View>
-      )}
-    />
-    {/* Adicionar visualização do carrinho aqui, se necessário */}
-  </View>
-=======
 import { AntDesign } from "@expo/vector-icons";
 
 export default function Carrinho({ route }) {
@@ -296,7 +256,6 @@ export default function Carrinho({ route }) {
         )}
       />
     </View>
->>>>>>> 853d076f9608654c6b6709ad32040a990c138559
   );
 }
 
