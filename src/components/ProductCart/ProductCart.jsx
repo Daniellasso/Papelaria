@@ -10,7 +10,8 @@ import {
 import LottieView from "lottie-react-native";
 import { AntDesign } from "@expo/vector-icons";
 
-export default function ProductCart() {
+// Adicione props como argumento aqui
+export default function ProductCart({ nome, preco }) {
   const [save, setSave] = useState(false);
   const animacao = useRef(null);
   const renderizar = useRef(true);
@@ -36,8 +37,11 @@ export default function ProductCart() {
     setNumero(numero + 1);
   }
   function subtrair() {
-    setNumero(numero - 1);
+    if (numero > 1) {
+      setNumero(numero - 1);
+    }
   }
+
   return (
     <View>
       <View
@@ -63,12 +67,11 @@ export default function ProductCart() {
             paddingBottom: 10
           }}
         >
-          <Text style={{ fontSize: 20, marginLeft: 10 }}>NomeProduto</Text>
+          {/* Utilize a prop 'nome' para definir o nome do produto */}
+          <Text style={{ fontSize: 20, marginLeft: 10 }}>{nome}</Text>
           <View style={{ flexDirection: "row", marginTop: 10, marginLeft: 10 }}>
             <TouchableOpacity onPress={subtrair}>
-              <View>
-                <AntDesign name="minussquare" size={35} color="black" />
-              </View>
+              <AntDesign name="minussquare" size={35} color="black" />
             </TouchableOpacity>
             <TextInput
               style={{
@@ -79,13 +82,11 @@ export default function ProductCart() {
                 marginRight: 5
               }}
               value={numero.toString()}
-              onChangeText={(text) => setNumero(text)}
+              onChangeText={(text) => setNumero(Number(text))}
               editable={false}
             />
             <TouchableOpacity onPress={adicionar}>
-              <View>
-                <AntDesign name="plussquare" size={35} color="black" />
-              </View>
+              <AntDesign name="plussquare" size={35} color="black" />
             </TouchableOpacity>
           </View>
           <View
@@ -96,7 +97,8 @@ export default function ProductCart() {
               paddingTop: 50
             }}
           >
-            <Text style={{ fontSize: 16, marginHorizontal: 10 }}>R$ 12.00</Text>
+            {/* Utilize a prop 'preco' para definir o preço do produto */}
+            <Text style={{ fontSize: 16, marginHorizontal: 10 }}>R$ {preco.toFixed(2)}</Text>
             <TouchableOpacity
               onPress={() => {
                 setSave(!save);
