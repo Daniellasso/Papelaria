@@ -6,6 +6,8 @@ import Login from "./pages/Login/Login";
 import Cadastro from "./pages/Cadastro/Cadastro";
 import RoutesTabs from "./routesTabs";
 import Descricao from "./pages/Descricao/Descricao";
+import Home from "./pages/Home/Home";
+import Carrinho from "./pages/Carrinho/Carrinho";
 
 const Stack = createNativeStackNavigator();
 
@@ -20,7 +22,12 @@ export default function Routes() {
         />
         <Stack.Screen
           name="Home"
-          component={RoutesTabs}
+          component={Home}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Carrinho"
+          component={Carrinho}
           options={{ headerShown: false }}
         />
         <Stack.Screen

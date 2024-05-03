@@ -7,9 +7,9 @@ import {
   TouchableOpacity,
   View
 } from "react-native";
-import LottieView from "lottie-react-native";
 import { AntDesign } from "@expo/vector-icons";
 
+<<<<<<< HEAD
 // Adicione props como argumento aqui
 export default function ProductCart({ nome, preco }) {
   const [save, setSave] = useState(false);
@@ -32,6 +32,10 @@ export default function ProductCart({ nome, preco }) {
       animacao.current.play(60, 0);
     }
   }, [save]);
+=======
+export default function ProductCart() {
+  const [numero, setNumero] = useState(0);
+>>>>>>> 853d076f9608654c6b6709ad32040a990c138559
 
   function adicionar() {
     setNumero(numero + 1);
@@ -97,6 +101,7 @@ export default function ProductCart({ nome, preco }) {
               paddingTop: 50
             }}
           >
+<<<<<<< HEAD
             {/* Utilize a prop 'preco' para definir o preço do produto */}
             <Text style={{ fontSize: 16, marginHorizontal: 10 }}>R$ {preco.toFixed(2)}</Text>
             <TouchableOpacity
@@ -111,10 +116,47 @@ export default function ProductCart({ nome, preco }) {
                 style={{ height: 50, width: 50 }}
                 ref={animacao}
               />
+=======
+            <Text style={{ fontSize: 16, marginHorizontal: 10 }}>R$ 12.00</Text>
+            <TouchableOpacity>
+              <AntDesign name="plussquare" size={35} color="black" />
+>>>>>>> 853d076f9608654c6b6709ad32040a990c138559
             </TouchableOpacity>
           </View>
         </View>
       </View>
+      {/* <View
+        style={{
+          backgroundColor: "#ffffffba",
+          height: 70
+        }}
+      >
+        <View
+          style={{
+            flexDirection: "row",
+            marginLeft: 10,
+            alignItems: "center",
+            marginVertical: 10
+          }}
+        >
+          <Text style={{ fontSize: 30, fontWeight: "900" }}>Total:</Text>
+          <Text style={{ fontSize: 25, marginLeft: 10, fontWeight: "500" }}>
+            R$ {valor}
+          </Text>
+          <TouchableOpacity>
+            <Text
+              style={{
+                fontSize: 18,
+                fontWeight: "900",
+                color: "#ff0000",
+                marginLeft: 10
+              }}
+            >
+              LIMPAR CARRINHO
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </View> */}
     </View>
   );
 }

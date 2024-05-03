@@ -7,9 +7,9 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/caderno.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#C3BEFA"
+      "image": "./assets/logo.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#ECC7BD"
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
